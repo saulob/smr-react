@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Stock Market Recommender
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Background
 
-## Available Scripts
+Behavioral Finance is an exciting field and you’ve decided to jump in with an idea for your new start up.
+In an earlier experimentation you’ve noticed a correlation between the various social media posts on a
+stock symbol and that share price for that stock symbol.
+You’ve decided to build an app that can provide a buy, hold or sell recommendation when given a stock
+symbol. The recommendation adjusts itself based on data.
+Unfortunately, there are multiple challenges around building this app. However, as a smart CTO, you’ve
+realized that things must be done in parallel. While you look at building your backend, you’ve decided to
+start working on the frontend today.
 
-In the project directory, you can run:
+## Technical Requirements
+• Since you don’t have a complete backend available to you yet, you will have to create and use
+your own mock data. Use the Math.random function to generate mock values for a given stock
+price and the count of social media posts that your backend service will provide, as well the
+recommendation for buying, holding (doing nothing) and selling the stock. Be sure to keep your
+code maintained in such a way that you can later replace it with a backend API. You can call
+these functions “stockPriceGenerator” (that takes the stock symbol and dates as parameters),
+“socialMediaCountGenerator” (that takes the stock symbol and social media type e.g. Twitter)
+and “recommendationAlgorithm” (that takes the stock prices and social media counts)
+• If things go well, you expect to have a team continue building the frontend and adding more
+features. The code must be modern and easy to maintain.
+• Your code must allow new features to be added easily. Yet, it should update seamlessly and be
+consistent throughout every “component” when new information is received from the
+“backend”.
+• You intend to demo the app to a lot of people who might become customers. It must be tested
+so that there are no surprises in demos.
+Feature Requirements
+The investors are quite pessimistic of your approach and have a lot of alternative ideas that you’ve
+promised to entertain to qualify for their funds. You must design a flexible architecture for your
+stock prices.
+• It would be simply amazing if you could swap out algorithms that recommend a buy/hold/sell
+rating on the fly.
+• You understand that some algorithms might require more information (like constants or risk
+ratios) and other information in order to generate this. It would be great if you could account for
+this.
 
-### `npm start`
+## Visual Requirements
+The app works with a lot of data. It needs to be presented to the user in a digestible way. Even
+though you have access to multiple CSS libraries, you’ve decided to show off your skills and write
+out your styles directly in CSS/SASS/LESS. You only care about keeping the app’s footprint to a
+minimum and would do anything to speed up the initial load times.
+• There needs to be separate sections showing
+o user input for stock symbol, a time window that is defaulted to 10 days (including
+today),
+o a count of social media posts and the stock price over 10 days,
+o recommendations for when to buy, hold (do nothing), or sell in those 10 days
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Optional Challenges
+Please note that the following milestones are not mandatory at all, but very cool to have in your
+demo.
+• Some of your customers might be visually impaired. It would be nice if they’re able to use the
+app as well.
+• Assume your backend teams tell you they can provide the top 2 social media posts as well.
+Display them on the app at the bottom.
+• Allow your users to request more than the top 2 social media posts.
+• Allow your users to request top “x” number of social media post from every social media service
+you have integrated.
+• Allow your users to add / remove any social media service from the system (recommendation
+and displays) on the fly.
+• Build a graph (feel free to use a library to help with this part) indicating the points where your
+algorithm will change the buy/hold/sell recommendation.
+Header
+Form for Stock Symbol, Social Media Info, and Time Window
+Table for a given Stock Symbol showing price at the end of the day and buy/sell/hold rating
