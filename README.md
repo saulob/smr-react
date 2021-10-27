@@ -1,5 +1,13 @@
 # Stock Market Recommender
 
+## Getting Started
+
+Installation:
+
+- Clone this repo
+- `npm install` to install all required dependencies
+- `npm start` to start the local server (this project uses create-react-app)
+
 ## Background
 
 Behavioral Finance is an exciting field and you’ve decided to jump in with an idea for your new start up.
