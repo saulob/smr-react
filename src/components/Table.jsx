@@ -1,91 +1,84 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
 import api from "../services/api";
 
-export default class Table extends React.Component {
+const Table = (props) => {
 
-    state = {
-        dates: [],
-        social_types: []
-    }
+    const [dates, setDates] = useState([]);
+    const [social_media, setSocialMedia] = useState('');
+    const [social_type, setSocialType] = useState('');
+    const [social_logo, setSocialLogo] = useState('');
 
-    componentDidMount() {
+    useEffect(() =>  {
 
         api.get("./data/dates.json")
             .then((response) => {
-                this.setState({dates: response.data})
+                setDates(response.data)
+
             } )
             .catch((err) => {
                 console.error("ops! error: " + err);
             });
 
-        api.get("./data/social_types.json")
+        api.get("./data/socials.json")
             .then((response) => {
-                this.setState({social_types: response.data})
+                const data = response.data.filter(social => social.Symbol.includes(props.symbol))
+                setSocialMedia(data.map(function (img) { return img['Media']; }));
+                setSocialType(data.map(function (img) { return img['Type']; }));
+                setSocialLogo(data.map(function (img) { return img['Img']; }));
             } )
             .catch((err) => {
                 console.error("ops! error: " + err);
             });
 
+    }, [props]);
 
-    }
+    if (props.symbol !== "") {
 
+            let prices  = [];
+            let counts  = [];
 
-    render() {
+            const randomDate = (start, end) => {
+                start = new Date(2020, 1, 1);
+                end = new Date();
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toISOString().split('T')[0];
+            }
 
-        let { social_types } = this.state
-        social_types = (social_types.filter(social => social.Symbol.includes(this.props.symbol)));
+            const fetchData = (symbol, socialType) => {
+                stockPriceGenerator(symbol, randomDate());
+                socialMediaCountGenerator(symbol, socialType);
+            }
 
-        let social_media = social_types.map(function (img) { return img['Media']; });
-        let social_type = social_types.map(function (img) { return img['Type']; });
-        let social_logo = social_types.map(function (img) { return img['Img']; });
-        let prices  = [];
-        let counts  = [];
+            let number1 = Math.round(Math.random() * (props.days - 1) + 1);
+            let number2 = number1 + parseInt(props.days);
 
-        function randomDate(start, end) {
-            start = new Date(2020, 1, 1);
-            end = new Date();
-            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toISOString().split('T')[0];
-        }
+            const socialMediaCountGenerator = (symbol, socialType) => {
+                dates.slice(number1,number2).map(date => (
+                    counts.push({'media_count': Math.round(Math.random() * 10)})
+                ));
+            }
 
-        const fetchData = (symbol, socialType) => {
-            stockPriceGenerator(symbol, randomDate());
-            socialMediaCountGenerator(symbol, socialType);
-        }
+            const recommendationAlgorithm = (stockPrice, socialCounts) => {
+                if (props.algo !== 'all' && props.algo !== '')
+                    return props.algo;
 
-        let number1 = Math.round(Math.random() * (this.props.days - 1) + 1);
-        let number2 = number1 + parseInt(this.props.days);
+                if (stockPrice > socialCounts*5)
+                    return 'sell'
 
-        const { dates } = this.state
-
-        const stockPriceGenerator = (symbol, date) => {
-            dates.slice(number1,number2).map(date => (
-                prices.push({'stock_price': Math.round(Math.random() * 100)})
-            ));
-        }
-
-        const socialMediaCountGenerator = (symbol, socialType) => {
-            dates.slice(number1,number2).map(date => (
-                counts.push({'media_count': Math.round(Math.random() * 10)})
-            ));
-        }
-
-        const recommendationAlgorithm = (stockPrice, socialCounts) => {
-            if (this.props.algo !== 'all' && this.props.algo !== '')
-                return this.props.algo;
-
-            if (stockPrice > socialCounts*5)
-                return 'sell'
-
-            if (stockPrice < socialCounts*3)
-                return 'buy'
+                if (stockPrice < socialCounts*3)
+                    return 'buy'
                 return 'hold'
-        }
+            }
 
-        if (this.props.symbol !== "") {
+            const stockPriceGenerator = (symbol, date) => {
+                dates.slice(number1,number2).map(date => (
+                    prices.push({'stock_price': Math.round(Math.random() * 100)})
+                ));
+            }
 
-            fetchData(this.props.symbol, social_type);
             document.getElementById("algo").style.visibility = 'visible';
             document.getElementById("days").style.visibility = 'visible';
+
+            fetchData(props.symbol,social_type);
 
             return (
                 <div>
@@ -110,7 +103,7 @@ export default class Table extends React.Component {
                                             <img src={social_logo} width="24" alt={social_media + ' logo'} title={social_media} /> {social_media}
                                         </td>
                                         <td>
-                                            {this.props.symbol}
+                                            {props.symbol}
                                         </td>
                                         <td>
                                             {date.date}
@@ -141,6 +134,6 @@ export default class Table extends React.Component {
         }
 
 
-    }
-
 }
+
+export default Table;

@@ -1,44 +1,24 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import './index.css';
 import Header from './components/Header';
 import Form from './components/Form';
 import Table from './components/Table';
 
-class App extends Component {
+const App = () => {
 
-    constructor() {
-        super();
-        this.state = {
-            days: 10,
-            symbol: '',
-            algo: '',
-        };
-    }
-
-    onChangeSymbol(newSymbol) {
-        this.setState({symbol: newSymbol})
-    }
-
-    onChangeAlgo(newAlgo) {
-        this.setState({algo: newAlgo})
-    }
-
-    onChangeDays(newDays) {
-        this.setState({days: newDays})
-    }
-
-    render() {
+    const [days, setDays] = useState('10');
+    const [symbol, setSymbol] = useState('');
+    const [algo, setAlgo] = useState('all');
 
         return (
             <div>
                 <Header />
-                <Form   changeSymbol={this.onChangeSymbol.bind(this)}
-                        changeAlgo={this.onChangeAlgo.bind(this)}
-                        changeDays={this.onChangeDays.bind(this)} />
-                <Table symbol={this.state.symbol} algo={this.state.algo} days={this.state.days} />
+                <Form   changeSymbol={setSymbol.bind(this)}
+                        changeAlgo={setAlgo.bind(this)}
+                        changeDays={setDays.bind(this)} />
+                <Table symbol={symbol} algo={algo} days={days} />
             </div>
-        );
-    }
+        )
 }
 
 export default App;
