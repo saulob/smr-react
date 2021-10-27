@@ -1,0 +1,26 @@
+[
+  {
+    "Symbol": "FBOK34",
+    "Media": "Facebook Inc.",
+    "Type": "Facebook",
+    "Img": "./images/facebook.png"
+  },
+  {
+    "Symbol": "GOGL34",
+    "Media": "Alphabet Inc.",
+    "Type": "Google",
+    "Img": "./images/google.png"
+  },
+  {
+    "Symbol": "TWTR34",
+    "Media": "Twitter, Inc.",
+    "Type": "Twitter",
+    "Img": "./images/twitter.png"
+  },
+  {
+    "Symbol": "P2IN34",
+    "Media": "Pinterest, Inc.",
+    "Type": "Pinterest",
+    "Img": "./images/pinterest.png"
+  }
+]

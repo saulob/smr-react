@@ -5,9 +5,11 @@ export default class Table extends React.Component {
 
     state = {
         dates: [],
+        social_types: []
     }
 
     componentDidMount() {
+
         api.get("./data/dates.json")
             .then((response) => {
                 this.setState({dates: response.data})
@@ -15,28 +17,29 @@ export default class Table extends React.Component {
             .catch((err) => {
                 console.error("ops! error: " + err);
             });
+
+        api.get("./data/social_types.json")
+            .then((response) => {
+                this.setState({social_types: response.data})
+            } )
+            .catch((err) => {
+                console.error("ops! error: " + err);
+            });
+
+
     }
+
 
     render() {
 
-        let social_media = [];
-        let social_type;
+        let { social_types } = this.state
+        social_types = (social_types.filter(social => social.Symbol.includes(this.props.symbol)));
+
+        let social_media = social_types.map(function (img) { return img['Media']; });
+        let social_type = social_types.map(function (img) { return img['Type']; });
+        let social_logo = social_types.map(function (img) { return img['Img']; });
         let prices  = [];
         let counts  = [];
-
-        if (this.props.symbol === 'FBOK34') {
-            social_media = 'Facebook Inc.';
-            social_type = 'Facebook';
-        } else if (this.props.symbol === 'GOGL34') {
-            social_media = 'Alphabet Inc.';
-            social_type = 'Google';
-        } else if (this.props.symbol === 'TWTR34') {
-            social_media = 'Twitter, Inc.';
-            social_type = 'Twitter';
-        } else if (this.props.symbol === 'P2IN34') {
-            social_media = 'Pinterest, Inc.';
-            social_type = 'Pinterest';
-        }
 
         function randomDate(start, end) {
             start = new Date(2020, 1, 1);
@@ -104,7 +107,7 @@ export default class Table extends React.Component {
                                     <tr key={i}>
                                         <td className="index">{i+1}</td>
                                         <td>
-                                            {social_media}
+                                            <img src={social_logo} width="24" alt={social_media + ' logo'} title={social_media} /> {social_media}
                                         </td>
                                         <td>
                                             {this.props.symbol}
@@ -113,7 +116,7 @@ export default class Table extends React.Component {
                                             {date.date}
                                         </td>
                                         <td>
-                                            {prices[i].stock_price}
+                                            $ {prices[i].stock_price}
                                         </td>
                                         <td>
                                             {counts[i].media_count}
