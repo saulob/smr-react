@@ -94,7 +94,7 @@ export default class Table extends React.Component {
                                     <th>symbol</th>
                                     <th>date</th>
                                     <th>price</th>
-                                    <th>media_count</th>
+                                    <th>media count</th>
                                     <th>recommendation</th>
                                 </tr>
                             </thead>
@@ -117,7 +117,7 @@ export default class Table extends React.Component {
                                         <td>
                                             {counts[i].media_count}
                                         </td>
-                                        <td>
+                                        <td className={recommendationAlgorithm(prices[i].stock_price, counts[i].media_count)}>
                                             {recommendationAlgorithm(prices[i].stock_price, counts[i].media_count)}
                                         </td>
                                     </tr>

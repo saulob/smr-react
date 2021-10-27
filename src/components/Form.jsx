@@ -1,4 +1,7 @@
 import React from 'react'
+// import logoFbk from 'public/images/facebook.png'
+// import logoTwt from 'public/images/twitter.png'
+// import logoGlg from 'public/images/google.jpg'
 
 export default class Form extends React.Component {
 
@@ -40,27 +43,27 @@ export default class Form extends React.Component {
         return (
             <div>
                 <div>
-                    <button onClick={() => callSymbol('FBOK34')}>
-                        Facebook
+                    <button className="btn btn-logo" onClick={() => callSymbol('FBOK34')}>
+                        <img src='./images/facebook.png' alt="facebook logo" />
                     </button>
-                    <button onClick={() => callSymbol('GOGL34')}>
-                        Google
+                    <button className="btn btn-logo"  onClick={() => callSymbol('GOGL34')}>
+                        <img src='./images/google.png'  alt="google logo" />
                     </button>
-                    <button onClick={() => callSymbol('TWTR34')}>
-                        Twitter
+                    <button className="btn btn-logo"  onClick={() => callSymbol('TWTR34')}>
+                        <img src='./images/twitter.png'  alt="twitter logo" />
                     </button>
                 </div>
                 <div>
-                    <button onClick={() => callAlgo('all')}>
+                    <button className="btn btn-white" onClick={() => callAlgo('all')}>
                         All
                     </button>
-                    <button onClick={() => callAlgo('buy')}>
+                    <button className="btn btn-yellow" onClick={() => callAlgo('buy')}>
                         Buy
                     </button>
-                    <button onClick={() => callAlgo('hold')}>
+                    <button className="btn btn-red" onClick={() => callAlgo('hold')}>
                         Hold
                     </button>
-                    <button onClick={() => callAlgo('sell')}>
+                    <button className="btn btn-green" onClick={() => callAlgo('sell')}>
                         Sell
                     </button>
                 </div>
