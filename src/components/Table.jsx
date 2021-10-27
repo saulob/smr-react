@@ -89,7 +89,7 @@ export default class Table extends React.Component {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th className="index">#</th>
                                     <th>social media</th>
                                     <th>symbol</th>
                                     <th>date</th>
@@ -101,7 +101,7 @@ export default class Table extends React.Component {
                             <tbody>
                                 {dates.slice(number1,number2).map((date,i) => (
                                     <tr key={i}>
-                                        <td>{i+1}</td>
+                                        <td className="index">{i+1}</td>
                                         <td>
                                             {social_media}
                                         </td>

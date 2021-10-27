@@ -88,3 +88,7 @@ table td {
 select {
   margin: 10px;
 }
+
+.index {
+  color: darkgray;
+}
