@@ -1,7 +1,4 @@
 import React from 'react'
-// import logoFbk from 'public/images/facebook.png'
-// import logoTwt from 'public/images/twitter.png'
-// import logoGlg from 'public/images/google.jpg'
 
 export default class Form extends React.Component {
 
@@ -44,16 +41,19 @@ export default class Form extends React.Component {
             <div>
                 <div>
                     <button className="btn btn-logo" onClick={() => callSymbol('FBOK34')}>
-                        <img src='./images/facebook.png' alt="facebook logo" />
+                        <img src='./images/facebook.png' alt="Facebook logo" title="Facebook Inc. (FBOK34)" />
                     </button>
                     <button className="btn btn-logo"  onClick={() => callSymbol('GOGL34')}>
-                        <img src='./images/google.png'  alt="google logo" />
+                        <img src='./images/google.png'  alt="Google logo" title="Alphabet Inc. (GOGL34)" />
+                    </button>
+                    <button className="btn btn-logo"  onClick={() => callSymbol('P2IN34')}>
+                        <img src='./images/pinterest.png'  alt="Pinterest logo" title="Pinterest, Inc. (P2IN34)" />
                     </button>
                     <button className="btn btn-logo"  onClick={() => callSymbol('TWTR34')}>
-                        <img src='./images/twitter.png'  alt="twitter logo" />
+                        <img src='./images/twitter.png'  alt="Twitter logo" title="Twitter, Inc. (TWTR34)" />
                     </button>
                 </div>
-                <div>
+                <div className="algo" id="algo">
                     <button className="btn btn-white" onClick={() => callAlgo('all')}>
                         All
                     </button>
@@ -67,7 +67,7 @@ export default class Form extends React.Component {
                         Sell
                     </button>
                 </div>
-                <div>
+                <div className="days" id="days">
                     Days:
                     <select name="time_window" defaultValue={'10'} onChange={(event) => this.callDays(event)} >
                         <option value="5">5</option>

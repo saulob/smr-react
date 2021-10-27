@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div>
-                Social Media - Stock Market
+                <h3>Social Media - Stock Market</h3>
             </div>
         )
     }

@@ -19,8 +19,6 @@ export default class Table extends React.Component {
 
     render() {
 
-        console.log('days: ' + this.props.days);
-
         let social_media = [];
         let social_type;
         let prices  = [];
@@ -35,6 +33,9 @@ export default class Table extends React.Component {
         } else if (this.props.symbol === 'TWTR34') {
             social_media = 'Twitter, Inc.';
             social_type = 'Twitter';
+        } else if (this.props.symbol === 'P2IN34') {
+            social_media = 'Pinterest, Inc.';
+            social_type = 'Pinterest';
         }
 
         function randomDate(start, end) {
@@ -50,8 +51,6 @@ export default class Table extends React.Component {
 
         let number1 = Math.round(Math.random() * (this.props.days - 1) + 1);
         let number2 = number1 + parseInt(this.props.days);
-
-        console.log('n1: ' + number1 + ' , n2: ' + number2);
 
         const { dates } = this.state
 
@@ -82,6 +81,8 @@ export default class Table extends React.Component {
         if (this.props.symbol !== "") {
 
             fetchData(this.props.symbol, social_type);
+            document.getElementById("algo").style.visibility = 'visible';
+            document.getElementById("days").style.visibility = 'visible';
 
             return (
                 <div>
@@ -130,9 +131,9 @@ export default class Table extends React.Component {
 
         } else {
             return (
-                <div>
-                    Choose the Social Media
-                </div>
+                <h4>
+                    choose your preferred social media network
+                </h4>
             )
         }
 

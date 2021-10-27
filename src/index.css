@@ -9,6 +9,11 @@ body {
   font-size: 30px;
 }
 
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
 div {
   margin-top: 5px;
 }
@@ -91,4 +96,15 @@ select {
 
 .index {
   color: darkgray;
+}
+
+.days {
+  text-align: right;
+  margin-right: 10%;
+  margin-top: -20px;
+  visibility: hidden;
+}
+
+.algo {
+  visibility: hidden;
 }
