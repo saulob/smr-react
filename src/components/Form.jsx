@@ -31,22 +31,28 @@ const Form = (props) =>{
                     </button>
                 </div>
                 <div className="algo" id="algo">
-                    <button className="btn btn-white" onClick={() => callAlgo('all')}>
+                    <button className="btn btn-white" title="Filter only All recommendations"
+                            onClick={() => callAlgo('all')}>
                         All
                     </button>
-                    <button className="btn btn-yellow" onClick={() => callAlgo('buy')}>
+                    <button className="btn btn-yellow" title="Filter only Buy recommendations"
+                            onClick={() => callAlgo('buy')}>
                         Buy
                     </button>
-                    <button className="btn btn-red" onClick={() => callAlgo('hold')}>
+                    <button className="btn btn-red" title="Filter only Hold recommendations"
+                            onClick={() => callAlgo('hold')}>
                         Hold
                     </button>
-                    <button className="btn btn-green" onClick={() => callAlgo('sell')}>
+                    <button className="btn btn-green" title="Filter only Sell recommendations"
+                            onClick={() => callAlgo('sell')}>
                         Sell
                     </button>
                 </div>
                 <div className="days" id="days">
                     Days:
-                    <select name="time_window" defaultValue={'10'} onChange={(event) => callDays(event)} >
+                    <select name="time_window" aria-label="Days" aria-required="true"
+                            defaultValue={'10'}
+                            onChange={(event) => callDays(event)} >
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
