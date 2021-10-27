@@ -15,7 +15,7 @@ const Form = (props) =>{
         }
 
         return (
-            <div>
+            <div className="bg-white bg-white-bottom">
                 <div>
                     <button className="btn btn-logo" onClick={() => callSymbol('FBOK34')}>
                         <img src='./images/facebook.png' alt="Facebook logo" title="Facebook Inc. (FBOK34)" />

@@ -52,7 +52,7 @@ const Table = (props) => {
             fetchData(props.symbol,social_type);
 
             return (
-                <div>
+                <div className="bg-white bg-white-top">
                     <center>
                         <table>
                             <thead>
@@ -98,9 +98,11 @@ const Table = (props) => {
 
         } else {
             return (
-                <h4>
-                    choose your preferred social media network
-                </h4>
+                <div className="bg-white bg-white-top">
+                    <h4>
+                        choose your preferred social media network
+                    </h4>
+                </div>
             )
         }
 

@@ -7,6 +7,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-size: 30px;
+  background-color: lightgray;
+}
+
+.bg-white {
+  border: solid 1px black;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.bg-white-top {
+  margin-top: -20px;
+  border-top: none;
+}
+
+.bg-white-bottom {
+  margin-bottom: 0;
+}
+
+.bg-black {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 20px 20px -20px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: solid 1px black;
 }
 
 h3 {
@@ -58,7 +90,6 @@ table td {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-
 }
 
 .btn-red, .hold {
