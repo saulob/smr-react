@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import api from "../services/api";
+import helper from '../util/helper';
 
 const Table = (props) => {
 
@@ -32,48 +33,18 @@ const Table = (props) => {
 
     }, [props]);
 
+    let prices  = [];
+    let counts  = [];
+
+    let number1 = Math.round(Math.random() * (props.days - 1) + 1);
+    let number2 = number1 + parseInt(props.days);
+
+    const fetchData = (symbol, socialType) => {
+        helper.stockPriceGenerator(symbol, dates, prices, number1, number2);
+        helper.socialMediaCountGenerator(symbol, socialType, dates, counts, number1, number2);
+    }
+
     if (props.symbol !== "") {
-
-            let prices  = [];
-            let counts  = [];
-
-            const randomDate = (start, end) => {
-                start = new Date(2020, 1, 1);
-                end = new Date();
-                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toISOString().split('T')[0];
-            }
-
-            const fetchData = (symbol, socialType) => {
-                stockPriceGenerator(symbol, randomDate());
-                socialMediaCountGenerator(symbol, socialType);
-            }
-
-            let number1 = Math.round(Math.random() * (props.days - 1) + 1);
-            let number2 = number1 + parseInt(props.days);
-
-            const socialMediaCountGenerator = (symbol, socialType) => {
-                dates.slice(number1,number2).map(date => (
-                    counts.push({'media_count': Math.round(Math.random() * 10)})
-                ));
-            }
-
-            const recommendationAlgorithm = (stockPrice, socialCounts) => {
-                if (props.algo !== 'all' && props.algo !== '')
-                    return props.algo;
-
-                if (stockPrice > socialCounts*5)
-                    return 'sell'
-
-                if (stockPrice < socialCounts*3)
-                    return 'buy'
-                return 'hold'
-            }
-
-            const stockPriceGenerator = (symbol, date) => {
-                dates.slice(number1,number2).map(date => (
-                    prices.push({'stock_price': Math.round(Math.random() * 100)})
-                ));
-            }
 
             document.getElementById("algo").style.visibility = 'visible';
             document.getElementById("days").style.visibility = 'visible';
@@ -114,8 +85,8 @@ const Table = (props) => {
                                         <td>
                                             {counts[i].media_count}
                                         </td>
-                                        <td className={recommendationAlgorithm(prices[i].stock_price, counts[i].media_count)}>
-                                            {recommendationAlgorithm(prices[i].stock_price, counts[i].media_count)}
+                                        <td className={helper.recommendationAlgorithm(prices[i].stock_price, counts[i].media_count, props.algo)}>
+                                            {helper.recommendationAlgorithm(prices[i].stock_price, counts[i].media_count, props.algo)}
                                         </td>
                                     </tr>
                                 ))}
