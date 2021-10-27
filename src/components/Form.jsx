@@ -1,40 +1,17 @@
 import React from 'react'
 
-export default class Form extends React.Component {
+const Form = (props) =>{
 
-    constructor(props) {
-        super();
-        this.state = {
-            days: 10,
-            symbol: '',
-            algo: '',
-        };
-    }
-
-    callDays(event) {
-        this.setState({
-            days: event.target.value
-        });
-
-        this.props.changeDays(event.target.value);
-    }
-
-    render() {
+        const callDays = (event) => {
+            props.changeDays(event.target.value);
+        }
 
         const callSymbol = (symbol) => {
-            this.setState({
-                symbol: symbol,
-            });
-
-            this.props.changeSymbol(symbol);
+            props.changeSymbol(symbol);
         }
 
         const callAlgo = (algo) => {
-            this.setState({
-                algo: algo,
-            });
-
-            this.props.changeAlgo(algo);
+            props.changeAlgo(algo);
         }
 
         return (
@@ -69,7 +46,7 @@ export default class Form extends React.Component {
                 </div>
                 <div className="days" id="days">
                     Days:
-                    <select name="time_window" defaultValue={'10'} onChange={(event) => this.callDays(event)} >
+                    <select name="time_window" defaultValue={'10'} onChange={(event) => callDays(event)} >
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
@@ -80,7 +57,6 @@ export default class Form extends React.Component {
                 </div>
             </div>
         )
-    }
-
 }
 
+export default Form;

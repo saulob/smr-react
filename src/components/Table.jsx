@@ -3,10 +3,10 @@ import api from "../services/api";
 
 const Table = (props) => {
 
-    const [dates, setDates] = useState([]);
-    const [social_media, setSocialMedia] = useState('');
-    const [social_type, setSocialType] = useState('');
-    const [social_logo, setSocialLogo] = useState('');
+    const [dates, setDates]                 = useState([]);
+    const [social_media, setSocialMedia]    = useState('');
+    const [social_type, setSocialType]      = useState('');
+    const [social_logo, setSocialLogo]      = useState('');
 
     useEffect(() =>  {
 
