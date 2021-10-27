@@ -19,7 +19,7 @@ const Table = (props) => {
                 console.error("ops! error: " + err);
             });
 
-        api.get("./data/socials.json")
+        api.get("./data/socials.json", { params: { symbol: props.symbol } })
             .then((response) => {
                 const data = response.data.filter(social => social.Symbol.includes(props.symbol))
                 setSocialMedia(data.map(function (img) { return img['Media']; }));
