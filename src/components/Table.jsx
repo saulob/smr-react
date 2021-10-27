@@ -19,7 +19,7 @@ export default class Table extends React.Component {
 
     render() {
 
-        console.log('algo: ' + this.props.algo);
+        console.log('days: ' + this.props.days);
 
         let social_media = [];
         let social_type;
@@ -48,8 +48,10 @@ export default class Table extends React.Component {
             socialMediaCountGenerator(symbol, socialType);
         }
 
-        let number1 = Math.round(Math.random() * (10 - 1) + 1);
-        let number2 = number1+10;
+        let number1 = Math.round(Math.random() * (this.props.days - 1) + 1);
+        let number2 = number1 + parseInt(this.props.days);
+
+        console.log('n1: ' + number1 + ' , n2: ' + number2);
 
         const { dates } = this.state
 
@@ -84,11 +86,10 @@ export default class Table extends React.Component {
             return (
                 <div>
                     <center>
-
-
                         <table>
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>social media</th>
                                     <th>symbol</th>
                                     <th>date</th>
@@ -99,7 +100,8 @@ export default class Table extends React.Component {
                             </thead>
                             <tbody>
                                 {dates.slice(number1,number2).map((date,i) => (
-                                    <tr key={date.date}>
+                                    <tr key={i}>
+                                        <td>{i+1}</td>
                                         <td>
                                             {social_media}
                                         </td>

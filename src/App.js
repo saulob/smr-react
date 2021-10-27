@@ -9,6 +9,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
+            days: 10,
             symbol: '',
             algo: '',
         };
@@ -22,14 +23,19 @@ class App extends Component {
         this.setState({algo: newAlgo})
     }
 
+    onChangeDays(newDays) {
+        this.setState({days: newDays})
+    }
+
     render() {
 
         return (
             <div>
-                <Header/>
-                <Form changeSymbol={this.onChangeSymbol.bind(this)}
-                      changeAlgo={this.onChangeAlgo.bind(this)} />
-                <Table symbol={this.state.symbol} algo={this.state.algo}/>
+                <Header />
+                <Form   changeSymbol={this.onChangeSymbol.bind(this)}
+                        changeAlgo={this.onChangeAlgo.bind(this)}
+                        changeDays={this.onChangeDays.bind(this)} />
+                <Table symbol={this.state.symbol} algo={this.state.algo} days={this.state.days} />
             </div>
         );
     }

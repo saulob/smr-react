@@ -14,7 +14,7 @@ code {
     monospace;
 }
 
-li {
+li, select {
   font-size: 25px;
 }
 
