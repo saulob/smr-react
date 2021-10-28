@@ -13,8 +13,7 @@ const Table = (props) => {
 
         api.get("./data/dates.json")
             .then((response) => {
-                setDates(response.data)
-
+                setDates(response.data);
             } )
             .catch((err) => {
                 console.error("ops! error: " + err);
@@ -105,8 +104,6 @@ const Table = (props) => {
                 </div>
             )
         }
-
-
 }
 
 export default Table;

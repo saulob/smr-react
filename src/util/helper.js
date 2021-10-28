@@ -24,4 +24,16 @@ export default class helper {
         return 'hold'
     }
 
+    static chartValues(days) {
+        let values = [];
+        for (let i = 0; i <= days; i++) {
+            values.push(Math.round(Math.random() * 100));
+        }
+        return values;
+    }
+
+    static chartBarValues() {
+        return Math.round(Math.random() * 100)
+    }
+
 }

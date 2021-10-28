@@ -6,8 +6,9 @@ const Form = (props) =>{
             props.changeDays(event.target.value);
         }
 
-        const callSymbol = (symbol) => {
+        const callSymbol = (symbol, title) => {
             props.changeSymbol(symbol);
+            props.changeTitle(title);
         }
 
         const callAlgo = (algo) => {
@@ -17,16 +18,16 @@ const Form = (props) =>{
         return (
             <div className="bg-white bg-white-bottom">
                 <div title="social logos">
-                    <button className="btn btn-logo btn-facebook" onClick={() => callSymbol('FBOK34')}>
+                    <button className="btn btn-logo btn-facebook" onClick={() => callSymbol('FBOK34', 'Facebook Inc.')}>
                         <img src='./images/facebook.png' alt="Facebook logo button" title="Facebook Inc. (FBOK34)" />
                     </button>
-                    <button className="btn btn-logo btn-google"  onClick={() => callSymbol('GOGL34')}>
+                    <button className="btn btn-logo btn-google"  onClick={() => callSymbol('GOGL34', 'Alphabet Inc.')}>
                         <img src='./images/google.png'  alt="Google logo button" title="Alphabet Inc. (GOGL34)" />
                     </button>
-                    <button className="btn btn-logo btn-pinterest"  onClick={() => callSymbol('P2IN34')}>
+                    <button className="btn btn-logo btn-pinterest"  onClick={() => callSymbol('P2IN34', 'Pinterest, Inc.')}>
                         <img src='./images/pinterest.png'  alt="Pinterest logo button" title="Pinterest, Inc. (P2IN34)" />
                     </button>
-                    <button className="btn btn-logo btn-twitter"  onClick={() => callSymbol('TWTR34')}>
+                    <button className="btn btn-logo btn-twitter"  onClick={() => callSymbol('TWTR34', 'Twitter, Inc.')}>
                         <img src='./images/twitter.png'  alt="Twitter logo button" title="Twitter, Inc. (TWTR34)" />
                     </button>
                 </div>

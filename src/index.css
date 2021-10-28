@@ -26,6 +26,17 @@ body {
   border-top: none;
 }
 
+.chart {
+  width: 85%;
+  max-height: 300px;
+}
+
+.chart-div {
+  width: 50%;
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .bg-white-bottom {
   margin-bottom: 0;
 }
@@ -111,7 +122,7 @@ table td {
 .btn-logo {
   background: none;
   cursor: pointer;
-  margin: 20px;
+  margin: 0 20px 20px;
   padding: 0;
   border: 0;
 }
@@ -130,9 +141,7 @@ select {
 }
 
 .days {
-  text-align: right;
-  margin-right: 10%;
-  margin-top: -20px;
+  margin-top: 20px;
   visibility: hidden;
 }
 
