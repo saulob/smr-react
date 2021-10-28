@@ -8,6 +8,10 @@ Installation:
 - `npm install` to install all required dependencies
 - `npm start` to start the local server (this project uses create-react-app)
 
+## Testing
+
+- You can test using `npm test`
+
 ## Background
 
 Behavioral Finance is an exciting field and you’ve decided to jump in with an idea for your new start up.
