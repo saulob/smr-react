@@ -103,7 +103,7 @@ const Chart = (props) => {
         }
     };
 
-    if (props.symbol !== "") {
+    if (props.symbol !== "" && props.algo === "all") {
         return (
             <div className="bg-white bg-white-bottom">
                 <div  className="chart-div">

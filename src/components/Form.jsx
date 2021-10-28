@@ -34,7 +34,7 @@ const Form = (props) =>{
                 <div className="algo" id="algo">
                     <button className="btn btn-white" title="Filter only All recommendations"
                             onClick={() => callAlgo('all')}>
-                        All
+                        All with charts
                     </button>
                     <button className="btn btn-yellow" title="Filter only Buy recommendations"
                             onClick={() => callAlgo('buy')}>
