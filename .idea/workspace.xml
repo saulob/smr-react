@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f83086-671a-4fc6-a750-bdc7d5751f3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +58,8 @@
       <recent name="C:\react\stock-m-r\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\react\smr-react\public" />
       <recent name="C:\react\smr-react\src" />
+      <recent name="C:\react\smr-react\public" />
       <recent name="C:\react\smr-react\src\services" />
     </key>
   </component>
@@ -73,7 +75,7 @@
       <workItem from="1635286179259" duration="226000" />
       <workItem from="1635286428625" duration="1028000" />
       <workItem from="1635287701296" duration="24192000" />
-      <workItem from="1635352656099" duration="15000000" />
+      <workItem from="1635352656099" duration="21962000" />
     </task>
     <servers />
   </component>

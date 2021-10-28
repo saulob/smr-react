@@ -16,18 +16,18 @@ const Form = (props) =>{
 
         return (
             <div className="bg-white bg-white-bottom">
-                <div>
-                    <button className="btn btn-logo" onClick={() => callSymbol('FBOK34')}>
-                        <img src='./images/facebook.png' alt="Facebook logo" title="Facebook Inc. (FBOK34)" />
+                <div title="social logos">
+                    <button className="btn btn-logo btn-facebook" onClick={() => callSymbol('FBOK34')}>
+                        <img src='./images/facebook.png' alt="Facebook logo button" title="Facebook Inc. (FBOK34)" />
                     </button>
-                    <button className="btn btn-logo"  onClick={() => callSymbol('GOGL34')}>
-                        <img src='./images/google.png'  alt="Google logo" title="Alphabet Inc. (GOGL34)" />
+                    <button className="btn btn-logo btn-google"  onClick={() => callSymbol('GOGL34')}>
+                        <img src='./images/google.png'  alt="Google logo button" title="Alphabet Inc. (GOGL34)" />
                     </button>
-                    <button className="btn btn-logo"  onClick={() => callSymbol('P2IN34')}>
-                        <img src='./images/pinterest.png'  alt="Pinterest logo" title="Pinterest, Inc. (P2IN34)" />
+                    <button className="btn btn-logo btn-pinterest"  onClick={() => callSymbol('P2IN34')}>
+                        <img src='./images/pinterest.png'  alt="Pinterest logo button" title="Pinterest, Inc. (P2IN34)" />
                     </button>
-                    <button className="btn btn-logo"  onClick={() => callSymbol('TWTR34')}>
-                        <img src='./images/twitter.png'  alt="Twitter logo" title="Twitter, Inc. (TWTR34)" />
+                    <button className="btn btn-logo btn-twitter"  onClick={() => callSymbol('TWTR34')}>
+                        <img src='./images/twitter.png'  alt="Twitter logo button" title="Twitter, Inc. (TWTR34)" />
                     </button>
                 </div>
                 <div className="algo" id="algo">

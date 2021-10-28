@@ -56,40 +56,40 @@ const Table = (props) => {
                     <center>
                         <table>
                             <thead>
-                                <tr>
-                                    <th className="index">#</th>
-                                    <th>social media</th>
-                                    <th>symbol</th>
-                                    <th>date</th>
-                                    <th>price</th>
-                                    <th>media count</th>
-                                    <th>recommendation</th>
-                                </tr>
+                            <tr>
+                                <th className="index">#</th>
+                                <th>social media</th>
+                                <th>symbol</th>
+                                <th>date</th>
+                                <th>price</th>
+                                <th>media count</th>
+                                <th>recommendation</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                {dates.slice(number1,number2).map((date,i) => (
-                                    <tr key={i}>
-                                        <td className="index">{i+1}</td>
-                                        <td>
-                                            <img src={social_logo} width="24" alt={social_media + ' logo'} title={social_media} /> {social_media}
-                                        </td>
-                                        <td>
-                                            {props.symbol}
-                                        </td>
-                                        <td>
-                                            {date.date}
-                                        </td>
-                                        <td>
-                                            $ {prices[i].stock_price}
-                                        </td>
-                                        <td>
-                                            {counts[i].media_count}
-                                        </td>
-                                        <td className={helper.recommendationAlgorithm(prices[i].stock_price, counts[i].media_count, props.algo)}>
-                                            {helper.recommendationAlgorithm(prices[i].stock_price, counts[i].media_count, props.algo)}
-                                        </td>
-                                    </tr>
-                                ))}
+                            {dates.slice(number1,number2).map((date,i) => (
+                                <tr key={i}>
+                                    <td className="index">{i+1}</td>
+                                    <td>
+                                        <img src={social_logo} width="24" alt={social_media + ' logo'} title={social_media} /> {social_media}
+                                    </td>
+                                    <td>
+                                        {props.symbol}
+                                    </td>
+                                    <td>
+                                        {date.date}
+                                    </td>
+                                    <td>
+                                        $ {prices[i].stock_price}
+                                    </td>
+                                    <td>
+                                        {counts[i].media_count}
+                                    </td>
+                                    <td className={helper.recommendationAlgorithm(prices[i].stock_price, counts[i].media_count, props.algo)}>
+                                        {helper.recommendationAlgorithm(prices[i].stock_price, counts[i].media_count, props.algo)}
+                                    </td>
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                     </center>
