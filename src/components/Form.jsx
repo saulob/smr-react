@@ -32,7 +32,7 @@ const Form = (props) =>{
                     </button>
                 </div>
                 <div className="algo" id="algo">
-                    <button className="btn btn-white" title="Filter only All recommendations"
+                    <button className="btn btn-white" title="Filter only All recommendations and show charts"
                             onClick={() => callAlgo('all')}>
                         All with charts
                     </button>
