@@ -86,15 +86,6 @@ const Chart = (props) => {
     };
 
     const optionsBar = {
-        scales: {
-            yAxes: [
-                {
-                    ticks: {
-                        beginAtZero: true,
-                    },
-                },
-            ],
-        },
         plugins: {
             title: {
                 display: true,
